@@ -14,7 +14,7 @@ _winEvents = _winEvents.split(" ");
 // Save a shortcut for "*" events
 var _allEvents = _docEvents.concat(_winEvents);
 
-var ARGS_SEPARATOR = " "    // Arguments separator for the logged data
+var ARGS_SEPARATOR = ","    // Arguments separator for the logged data
   , INFO_SEPARATOR = "|||"  // This one must match that of save.php (INFSEP)
   ;
 
@@ -73,6 +73,7 @@ var TrackUI = {
     // Enable this to display some debug information
     debug: false
   },
+
   /**
    * Init method. Registers event listeners.
    * @param {object} config  Tracking Settings
@@ -160,6 +161,7 @@ var TrackUI = {
         //data += "&layout="  + TrackUI.settings.layoutType;
         //data += "&cookies=" + document.cookie;
         data += "&action="  + "init";
+
     // Send request
     TrackUI.send({
       async:    async,
